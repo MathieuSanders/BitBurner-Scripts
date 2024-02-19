@@ -1,7 +1,7 @@
 /** @param {NS} ns **/
 export async function main(ns) {
-  // Get the hostname of the current server
-  const target = ns.getHostname();
+  // Get the hostname of the current server, unless a server name is passed from the terminal.
+  const target = ns.args[0] || ns.getHostname();
   //Loop the script forever
   while (true) {
     //Run weaken if server security is above minimum
